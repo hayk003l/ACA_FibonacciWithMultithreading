@@ -23,7 +23,7 @@ unsigned long long fib(const int& num) {
 void fibWrapper(const int& num, std::ostringstream& stream) {
     std::thread::id threadId = std::this_thread::get_id();
     auto start = std::chrono::high_resolution_clock::now();
-    stream << "fibo(" << num << ") = " << fib(num) << std::endl;
+    stream << "fibo(" << num << ") = " << fib(num) << " id = " << threadId << std::endl;
     
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
